@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, MapPin } from "lucide-react";
 
 const links = [
-  { icon: <Mail className="h-5 w-5" />, label: "Email", value: "bonnkearunga@gmail.com", href: "mailto:bonnkearunga@gmail.com" },
-  { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", value: "linkedin.com/in/bonnkearunga", href: "https://linkedin.com/in/bonnkearunga" },
-  { icon: <Github className="h-5 w-5" />, label: "GitHub", value: "github.com/bonnkearunga", href: "https://github.com/bonnkearunga" },
+  { icon: <Mail className="h-5 w-5" />, label: "Email", value: "sirbonnkearunga@gmail.com", href: "mailto:sirbonnkearunga@gmail.com" },
+  { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", value: "linkedin.com/in/mdbonnke", href: "https://www.linkedin.com/in/mdbonnke" },
+  { icon: <Github className="h-5 w-5" />, label: "GitHub", value: "github.com/mdbonnke", href: "https://github.com/mdbonnke" },
   { icon: <MapPin className="h-5 w-5" />, label: "Location", value: "Kenya", href: undefined },
 ];
 

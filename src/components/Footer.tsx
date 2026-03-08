@@ -29,9 +29,9 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold text-foreground mb-3">Connect</h4>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-            <a href="mailto:bonnkearunga@gmail.com" className="hover:text-foreground transition-colors">bonnkearunga@gmail.com</a>
-            <a href="https://linkedin.com/in/bonnkearunga" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="https://github.com/bonnkearunga" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+            <a href="mailto:sirbonnkearunga@gmail.com" className="hover:text-foreground transition-colors">sirbonnkearunga@gmail.com</a>
+            <a href="https://www.linkedin.com/in/mdbonnke" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+            <a href="https://github.com/mdbonnke" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
           </div>
         </div>
       </div>
