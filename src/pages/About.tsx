@@ -1,9 +1,15 @@
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { SITE } from "@/lib/constants";
 
 const About = () => (
   <Layout>
+    <Helmet>
+      <title>About — {SITE.name}</title>
+      <meta name="description" content="Medical doctor and healthcare data analyst working at the intersection of clinical medicine, data science, and public health in Kenya." />
+    </Helmet>
     <section className="section-padding">
       <div className="max-w-3xl mx-auto">
         <SectionHeading title="About" subtitle="Physician. Analyst. Innovator." />

@@ -1,9 +1,24 @@
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { type ReactNode } from "react";
 import { Separator } from "@/components/ui/separator";
+import { SITE } from "@/lib/constants";
 
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+const technicalSkills = [
+  "Python",
+  "SQL",
+  "Tableau",
+  "Healthcare Data Analysis",
+  "Data Visualization",
+  "Machine Learning (Basic)",
+  "Clinical Data Extraction",
+  "Statistical Analysis",
+  "Dashboard Design",
+];
+
+const Section = ({ title, children }: { title: string; children: ReactNode }) => (
   <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
     <h3 className="font-serif text-2xl text-foreground mb-4">{title}</h3>
     {children}
@@ -13,6 +28,10 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const CV = () => (
   <Layout>
+    <Helmet>
+      <title>CV — {SITE.name}</title>
+      <meta name="description" content="Curriculum vitae of Dr. Bonnke Arunga — physician, healthcare data analyst, and public health researcher." />
+    </Helmet>
     <section className="section-padding">
       <div className="max-w-3xl mx-auto">
         <SectionHeading title="Curriculum Vitae" subtitle="Academic and professional background." />
@@ -65,17 +84,7 @@ const CV = () => (
 
         <Section title="Technical Skills">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              "Python",
-              "SQL",
-              "Tableau",
-              "Healthcare Data Analysis",
-              "Data Visualization",
-              "Machine Learning (Basic)",
-              "Clinical Data Extraction",
-              "Statistical Analysis",
-              "Dashboard Design",
-            ].map((skill) => (
+            {technicalSkills.map((skill) => (
               <div key={skill} className="bg-muted rounded-md px-3 py-2 text-sm text-foreground text-center">
                 {skill}
               </div>

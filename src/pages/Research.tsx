@@ -1,22 +1,29 @@
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { BookOpen, FlaskConical, TrendingUp, BrainCircuit } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { researchInterests } from "@/data/researchData";
+import { SITE } from "@/lib/constants";
 
-const interests = [
-  { icon: <TrendingUp className="h-5 w-5 text-accent" />, title: "Healthcare Data & Clinical Outcomes", desc: "Using retrospective clinical data to analyze treatment outcomes, identify care delivery gaps, and inform quality improvement in hospital settings." },
-  { icon: <BrainCircuit className="h-5 w-5 text-accent" />, title: "Machine Learning in Medicine", desc: "Exploring supervised learning approaches for clinical risk prediction, disease classification, and decision-support tools appropriate for resource-limited contexts." },
-  { icon: <FlaskConical className="h-5 w-5 text-accent" />, title: "Public Health Analytics", desc: "Epidemiological data analysis, disease surveillance, and population health metrics — with a focus on infectious disease and maternal-child health in sub-Saharan Africa." },
-  { icon: <BookOpen className="h-5 w-5 text-accent" />, title: "Digital Health Systems", desc: "Design and evaluation of digital health interventions including electronic medical records, clinical dashboards, and mobile health tools for low- and middle-income settings." },
-];
+const iconMap: Record<string, LucideIcon> = {
+  TrendingUp,
+  BrainCircuit,
+  FlaskConical,
+  BookOpen,
+};
 
 const Research = () => (
   <Layout>
+    <Helmet>
+      <title>Research — {SITE.name}</title>
+      <meta name="description" content="Academic work and research interests at the intersection of clinical medicine, data science, and public health." />
+    </Helmet>
     <section className="section-padding">
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Research" subtitle="Academic work and research interests at the intersection of clinical medicine, data science, and public health." />
 
-        {/* Publication */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
           className="bg-card rounded-lg p-8 border border-border mb-12"
         >
@@ -26,7 +33,6 @@ const Research = () => (
           </p>
         </motion.div>
 
-        {/* Current academic work */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="bg-muted/50 rounded-lg p-8 border border-border mb-12"
         >
@@ -36,23 +42,27 @@ const Research = () => (
           </p>
         </motion.div>
 
-        {/* Research Interests */}
         <h3 className="font-serif text-2xl text-foreground mb-6">Research Interests</h3>
         <div className="grid md:grid-cols-2 gap-6">
-          {interests.map((item, i) => (
-            <motion.div key={item.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-lg p-6 border border-border"
-            >
-              <div className="flex items-start gap-3">
-                <div className="mt-1">{item.icon}</div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+          {researchInterests.map((item, i) => {
+            const Icon = iconMap[item.iconName];
+            return (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-card rounded-lg p-6 border border-border"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="mt-1" aria-hidden="true">
+                    <Icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
