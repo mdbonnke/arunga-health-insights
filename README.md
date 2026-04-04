@@ -12,6 +12,7 @@ There are several ways of editing your application.
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
+<!-- Custom domain: www.bwritepost.com -->
 Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
