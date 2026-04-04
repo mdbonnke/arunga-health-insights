@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 const links = [
   { to: "/", label: "Home" },
@@ -9,6 +10,7 @@ const links = [
   { to: "/clinical", label: "Clinical Medicine" },
   { to: "/analytics", label: "Data Analytics" },
   { to: "/projects", label: "Projects" },
+  { to: "/hire-me", label: "Hire Me" },
   { to: "/research", label: "Research" },
   { to: "/cv", label: "CV" },
   { to: "/contact", label: "Contact" },
@@ -16,6 +18,7 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { theme, toggle } = useTheme();
   const location = useLocation();
 
   return (
@@ -38,10 +41,19 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
+        {/* Theme + Mobile toggle */}
+        <div className="flex items-center gap-3">
+        <button
+          onClick={toggle}
+          className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
         <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

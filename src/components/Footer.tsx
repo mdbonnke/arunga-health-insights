@@ -18,6 +18,7 @@ const Footer = () => (
               { to: "/clinical", label: "Clinical Medicine" },
               { to: "/analytics", label: "Data Analytics" },
               { to: "/projects", label: "Projects" },
+              { to: "/hire-me", label: "Hire Me" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <Link key={l.to} to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">

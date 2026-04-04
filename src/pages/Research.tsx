@@ -20,10 +20,28 @@ const Research = () => (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
           className="bg-card rounded-lg p-8 border border-border mb-12"
         >
-          <h3 className="font-serif text-xl text-foreground mb-1">Publication</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-            <span className="font-semibold text-foreground">Case Report:</span> Heart failure in a patient with subcutaneous phycomycosis — a clinical case report exploring the intersection of infectious disease and cardiac complications, contributing to the literature on rare infectious etiologies of cardiac dysfunction.
-          </p>
+          <h3 className="font-serif text-xl text-foreground mb-4">Publication</h3>
+          <div className="space-y-3">
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/36176458/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block font-semibold text-foreground hover:text-accent transition-colors leading-snug"
+            >
+              Adverse effects of Lugol’s iodine: Heart failure in a patient with subcutaneous phycomycosis from a resource-limited setting ↗
+            </a>
+            <p className="text-sm text-muted-foreground">
+              Karahalios DS, Shaw A, <span className="font-medium text-foreground">Arunga B</span>, Lenehan C, Sing’oei V, Otieno W.
+              {" "}<span className="italic">Medical Mycology Case Reports.</span> 2022 Sep 16;38:9–12.
+              {" "}PMID: 36176458 · DOI: 10.1016/j.mmcr.2022.09.001
+            </p>
+            <div className="bg-muted/60 rounded-md p-4 border-l-2 border-accent mt-2">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">Summary:</span>{" "}
+                This peer-reviewed case report describes a patient with subcutaneous phycomycosis — a rare tropical fungal infection — who developed iodine-mediated cardiac toxicity (heart failure) during treatment with Lugol’s iodine, a low-cost substitute used in resource-limited settings. The case highlights the critical intersection of infectious disease management, cardiac complications, and social determinants of health, and argues that Lugol’s iodine requires careful dosing and long-term monitoring to be used safely.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Current academic work */}
