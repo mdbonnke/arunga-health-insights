@@ -1,14 +1,5 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# When VITE_SITE_URL is set at build time, npm run build also writes dist/sitemap.xml
+# and a robots.txt that includes: Sitemap: <your-origin>/sitemap.xml

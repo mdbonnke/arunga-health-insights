@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Seo } from "@/components/Seo";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, MapPin } from "lucide-react";
@@ -12,9 +14,25 @@ const links = [
 
 const Contact = () => (
   <Layout>
+    <Seo
+      title="Contact | Digital Health Consultant & Medical Doctor"
+      description="Contact Dr. Bonnke Arunga for digital health consulting, healthcare analytics, medical writing, medico-legal reports, clinical services, and research collaborations."
+      path="/contact"
+    />
     <section className="section-padding">
       <div className="max-w-2xl mx-auto">
-        <SectionHeading title="Contact" subtitle="Open to collaborations in clinical research, healthcare analytics, digital health, and public health projects." />
+        <SectionHeading
+          as="h1"
+          title="Contact"
+          subtitle="Digital health consulting, healthcare analytics, medical writing, medico-legal work, clinical services in Kenya, and remote engagements worldwide."
+        />
+        <p className="text-sm text-muted-foreground mb-8">
+          Prefer a scoped conversation first? Start from{" "}
+          <Link to="/hire-me" className="text-accent font-medium hover:underline">
+            hire me
+          </Link>
+          .
+        </p>
         <div className="space-y-4">
           {links.map((item, i) => (
             <motion.div

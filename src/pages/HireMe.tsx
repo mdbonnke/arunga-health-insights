@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Seo } from "@/components/Seo";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,6 @@ import {
   ArrowRight,
   BarChart3,
   BrainCircuit,
-  GraduationCap,
   Layers,
   LineChart,
   Laptop,
@@ -45,46 +45,65 @@ function formatUsdLine(kes: number, from?: boolean) {
 }
 
 const heroServices = [
-  "Clinical Services",
-  "Medico-Legal Work",
-  "Medical Writing & Education",
-  "Data & Analytics",
-  "Digital Health & AI Systems",
+  "Digital health consulting",
+  "Healthcare analytics & dashboards",
+  "Medical writing & medico-legal reports",
+  "Licensed clinical services (Kenya)",
+  "Medical education product work",
 ];
 
 const services = [
   {
-    icon: <Stethoscope className="h-5 w-5 text-accent" />,
-    title: "Clinical & Medico-Legal Services",
-    desc: "Clinical consultations, medical documentation, and medico-legal reporting grounded in real-world practice and defensible reasoning.",
+    icon: <BrainCircuit className="h-5 w-5 text-accent" />,
+    title: "Digital Health Consulting Services",
+    desc: "Workflow design, AI integration planning, and product decisions for clinical and med-ed platforms—led by a practicing physician who ships software.",
     deliverables: [
-      "General medical consultations",
-      "Medical reports and documentation",
-      "Medico-legal reports",
-      "Clinical reviews for individuals or institutions",
+      "Requirements and clinical workflow mapping",
+      "AI and decision-support scoping",
+      "Safety, documentation, and governance considerations",
+      "Roadmaps from pilot to scale",
     ],
-  },
-  {
-    icon: <GraduationCap className="h-5 w-5 text-accent" />,
-    title: "Medical Writing & Education",
-    desc: "Structured writing and education work for doctors, students, and healthcare-facing organizations that need clarity, rigor, and usable outputs.",
-    deliverables: [
-      "Personal statements",
-      "Research summaries",
-      "Question-bank and study systems",
-      "Professional medical content",
-    ],
+    detailHref: "/digital-health-consulting",
+    detailLabel: "Digital health consulting",
   },
   {
     icon: <BarChart3 className="h-5 w-5 text-accent" />,
-    title: "Data, AI & Digital Health Systems",
-    desc: "Healthcare dashboards, analytical systems, and digital health product work designed to solve operational and knowledge problems.",
+    title: "Healthcare Data Analytics and Dashboard Development",
+    desc: "Analytics and dashboards for operational and clinical decisions: Python, SQL, Tableau, and interpretation that accounts for real-world data quality.",
     deliverables: [
-      "Dashboards and reporting systems",
-      "Healthcare analytics workflows",
-      "Clinical AI and digital health consulting",
-      "Product and system design",
+      "Cleaning and exploratory analysis",
+      "Hospital and program dashboards",
+      "Reporting pipelines and documentation",
+      "Findings framed for leadership action",
     ],
+    detailHref: "/healthcare-analytics",
+    detailLabel: "Healthcare analytics work",
+  },
+  {
+    icon: <PenSquare className="h-5 w-5 text-accent" />,
+    title: "Medical Writing and Medico-Legal Reports",
+    desc: "Formal medical writing and medico-legal reporting with clear scope, traceable reasoning, and language appropriate to courts and institutions.",
+    deliverables: [
+      "Medico-legal reports",
+      "Medical summaries and referral documentation",
+      "Personal statements and research summaries",
+      "Question banks and structured study systems",
+    ],
+    detailHref: "/medical-writing",
+    detailLabel: "Medical writing services",
+  },
+  {
+    icon: <Stethoscope className="h-5 w-5 text-accent" />,
+    title: "Clinical Services by a Licensed Medical Doctor",
+    desc: "Clinical consultations and documentation grounded in active hospital practice in Kenya; scoped according to professional standards and setting.",
+    deliverables: [
+      "General medical consultations",
+      "Medical reports tied to clinical assessment",
+      "Institutional clinical reviews where appropriate",
+      "Coordination with medico-legal documentation when needed",
+    ],
+    detailHref: "/clinical-services",
+    detailLabel: "Clinical services",
   },
 ];
 
@@ -139,7 +158,7 @@ const proofItems = [
 const pricingGroups = [
   {
     icon: <Scale className="h-5 w-5 text-accent" />,
-    title: "Clinical & Medico-Legal Services",
+    title: "Clinical & medico-legal",
     desc: "For individuals and institutions needing clinical review, documentation, or expert medical reporting.",
     items: [
       { name: "General consultation", kes: 2000 },
@@ -149,7 +168,7 @@ const pricingGroups = [
   },
   {
     icon: <PenSquare className="h-5 w-5 text-accent" />,
-    title: "Medical Writing & Education",
+    title: "Medical writing & education",
     desc: "For doctors, students, and healthcare organizations that need clear written work or structured learning systems.",
     items: [
       { name: "Personal statements", kes: 5000, from: true },
@@ -159,7 +178,7 @@ const pricingGroups = [
   },
   {
     icon: <BrainCircuit className="h-5 w-5 text-accent" />,
-    title: "Data, AI & Digital Health Systems",
+    title: "Data, AI & digital health systems",
     desc: "For teams building products, dashboards, or decision systems in healthcare and medical education.",
     items: [
       { name: "Dashboards", kes: 10000, from: true },
@@ -197,6 +216,11 @@ const engagementModels = [
 
 const HireMe = () => (
   <Layout>
+    <Seo
+      title="Hire a Digital Health Consultant | Doctor, AI Systems, Healthcare Analytics"
+      description="Hire a medical doctor for digital health consulting, healthcare analytics and dashboards, medical writing and medico-legal reports, and clinical services. Remote worldwide; clinical work in Kenya."
+      path="/hire-me"
+    />
     <section className="section-padding pt-28 md:pt-32 pb-16 md:pb-24">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -209,17 +233,35 @@ const HireMe = () => (
               Hire me
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-[2.75rem] leading-tight text-foreground mb-6">
-              I build healthcare tools, analytics systems, and medical education products that solve
-              real clinical and operational problems.
+              Hire a medical doctor for digital health consulting, healthcare analytics, and clinical systems
+              that survive real-world use.
             </h1>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl">
-              I also provide clinical consultations, medical documentation, and medico-legal work.
-              The goal is the same across all services: clear decisions, usable outputs, and work
-              grounded in real healthcare practice.
+              I combine active hospital practice with analytics, medical writing, and product delivery. Engagements
+              are scoped for defensible clinical language, usable dashboards, and AI workflows that respect safety
+              and governance.
             </p>
-            <p className="text-sm text-foreground/80 mb-10 max-w-xl">
-              Available for clinical services, writing, analytics, consulting, and selected product
-              work.
+            <p className="text-sm text-foreground/80 mb-3 max-w-xl">
+              Available for global remote work and local clinical services in Kenya.
+            </p>
+            <p className="text-sm text-muted-foreground mb-10 max-w-xl">
+              Service detail pages:{" "}
+              <Link to="/digital-health-consulting" className="text-accent font-medium hover:underline">
+                digital health consulting
+              </Link>
+              ,{" "}
+              <Link to="/healthcare-analytics" className="text-accent font-medium hover:underline">
+                healthcare analytics
+              </Link>
+              ,{" "}
+              <Link to="/medical-writing" className="text-accent font-medium hover:underline">
+                medical writing
+              </Link>
+              ,{" "}
+              <Link to="/clinical-services" className="text-accent font-medium hover:underline">
+                clinical services
+              </Link>
+              .
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild className="bg-primary text-primary-foreground hover:bg-navy-light">
@@ -261,10 +303,10 @@ const HireMe = () => (
     <section className="section-padding bg-muted/40 border-y border-border/60">
       <div className="max-w-5xl mx-auto">
         <SectionHeading
-          title="What I can help with"
-          subtitle="Three clear service categories, each tied to concrete work and usable outcomes."
+          title="Service categories"
+          subtitle="Four areas—each maps to a dedicated page with scope, audience, and deliverables."
         />
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
@@ -278,9 +320,9 @@ const HireMe = () => (
               <div className="mb-4 p-2.5 rounded-lg bg-muted/80 w-fit border border-border/50">
                 {s.icon}
               </div>
-              <h3 className="font-serif text-xl text-foreground mb-3">{s.title}</h3>
+              <h2 className="font-serif text-xl text-foreground mb-3">{s.title}</h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">{s.desc}</p>
-              <ul className="space-y-2 pt-4 border-t border-border">
+              <ul className="space-y-2 pt-4 border-t border-border mb-4">
                 {s.deliverables.map((d) => (
                   <li key={d} className="text-sm text-foreground/85 flex gap-2.5 leading-snug">
                     <span className="text-accent shrink-0 select-none">·</span>
@@ -288,6 +330,12 @@ const HireMe = () => (
                   </li>
                 ))}
               </ul>
+              <Link
+                to={s.detailHref}
+                className="text-sm font-medium text-accent hover:underline inline-flex items-center gap-1"
+              >
+                {s.detailLabel} <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </motion.div>
           ))}
         </div>

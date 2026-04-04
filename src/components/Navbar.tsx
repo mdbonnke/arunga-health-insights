@@ -7,9 +7,12 @@ import { useTheme } from "@/context/ThemeContext";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/clinical", label: "Clinical Medicine" },
-  { to: "/analytics", label: "Data Analytics" },
+  { to: "/digital-health-consulting", label: "Digital health" },
+  { to: "/healthcare-analytics", label: "Analytics" },
+  { to: "/clinical-services", label: "Clinical" },
+  { to: "/medical-writing", label: "Writing" },
   { to: "/projects", label: "Projects" },
+  { to: "/articles", label: "Articles" },
   { to: "/hire-me", label: "Hire Me" },
   { to: "/research", label: "Research" },
   { to: "/cv", label: "CV" },
@@ -28,35 +31,32 @@ const Navbar = () => {
           Dr. Bonnke Arunga
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-5 flex-wrap justify-end max-w-4xl">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`nav-link ${location.pathname === link.to ? "nav-link-active" : ""}`}
+              className={`nav-link text-xs xl:text-sm whitespace-nowrap ${location.pathname === link.to ? "nav-link-active" : ""}`}
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        {/* Theme + Mobile toggle */}
         <div className="flex items-center gap-3">
-        <button
-          onClick={toggle}
-          className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
-        <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <button
+            onClick={toggle}
+            className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button className="lg:hidden text-foreground" onClick={() => setOpen(!open)} aria-expanded={open}>
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div

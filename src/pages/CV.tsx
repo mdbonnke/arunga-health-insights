@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { Seo } from "@/components/Seo";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
@@ -19,6 +20,11 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const CV = () => (
   <Layout>
+    <Seo
+      title="CV | Dr. Bonnke Arunga — Medical Doctor, Analytics, Digital Health"
+      description="Curriculum vitae: Dr. Bonnke Arunga, MBChB—clinical practice, healthcare analytics, digital health product work, and public health training."
+      path="/cv"
+    />
     <section className="section-padding">
       <div className="max-w-4xl mx-auto">
 
